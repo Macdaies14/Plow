@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Karla';
+        }
+
+        header{
+            background-color: #0e0e0e;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+            width: 100%;
+            padding: 0 30px;
+        }
+
+        li{
+            list-style-type: none;
+            margin: 20px;
+        }
+
+        a{
+            color: #FFF;
+            text-decoration: none;
+        }
+
+        .header-logo{
+            font-size: 28px;
+        }
+
+        .nav-menu{
+            display: flex;
+        }
+
+        .btn{
+            background-color: aliceblue;
+            padding: 14px 26px;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        .hamburger{
+            display: none;
+            cursor: pointer;
+        }
+
+        .bar{
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #FFF;
+            margin: 5px auto;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+
+        @media screen and (max-width: 768px) {
+            header{
+                justify-content: space-between;
+            }
+            .hamburger{
+                display: block;
+                position: absolute;
+                right: 10%;
+            }
+
+            .hamburger.active .bar:nth-child(2){
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(1){
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .bar:nth-child(3){
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .nav-menu{
+                position: fixed;
+                right: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: #0e0e0e;
+                width: 40%;
+                height: 100vh;
+                text-align: center;
+                transition: 0.3s;
+            }
+
+            .nav-menu.active{
+                right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+   <header>
+    <div class="logo-container">
+        <a href="#" class="header-logo">
+            NavLogo
+        </a>
+    </div>
+
+    <div class="hamburger" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <nav class="navbar">
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Product</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link">How it works</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link">Features</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link">Benefit</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+            </li>
+
+            <button class="btn">Join Waitlist</button>
+        </ul>
+    </nav>
+
+   <script src="js/test.js"></script>
+</body>
+</html>
